@@ -1,0 +1,105 @@
+import "./notes.css";
+import React, { useState, useEffect } from "react";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+
+import defaultImage from '../../assests/booksbg.jpg'
+import { getDownloadURL, getMetadata, listAll, ref } from "firebase/storage";
+import { storage } from "../../index"; // Update the path to your Firebase config file
+
+function Notes() {
+  const [pdfUrls, setPdfUrls] = useState([]);
+  const [imageUrls, setImageUrls] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); // State to store the search query
+  const [filteredPdfUrls, setFilteredPdfUrls] = useState([]); // State to store filtered PDF URLs
+
+  const pdfsListRef = ref(storage, "files/");
+
+  
+  useEffect(() => {
+    console.log("Fetching PDFs...");
+    listAll(pdfsListRef)
+      .then((response) => {
+        console.log(response.prefixes, "response");
+        const pdfPromises = response.prefixes.map(async (prefix) => {
+          const prefixPath = prefix.fullPath;
+          const items = await listAll(ref(storage, prefixPath));
+          const pdfs = items.items.map(async (item) => {
+            const url = await getDownloadURL(item);
+            const metadata = await getMetadata(item);
+            return { url, filename: metadata.name };
+          });
+          return Promise.all(pdfs);
+        });
+
+        return Promise.all(pdfPromises);
+      })
+      .then((pdfsByTopic) => {
+        const allPdfs = pdfsByTopic.reduce((acc, pdfs) => [...acc, ...pdfs], []);
+        console.log("PDFs fetched successfully:", allPdfs);
+
+        // Separate PDF and image URLs
+        const pdfUrls = allPdfs.filter((pdf) => pdf.filename.endsWith(".pdf"));
+        const imgUrls = allPdfs.filter((pdf) => pdf.filename.match(/\.(jpeg|jpg|png)$/i));
+
+        setPdfUrls(pdfUrls);
+        setImageUrls(imgUrls);
+      })
+      .catch((error) => {
+        console.error("Error fetching PDF URLs:", error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    // Filter PDF URLs based on the search query
+    const filteredPdfs = filterNotes(searchQuery);
+    setFilteredPdfUrls(filteredPdfs);
+  }, [searchQuery, pdfUrls]);
+
+  const filterNotes = (query) => {
+    // Convert the query to lowercase for case-insensitive search
+    const lowercaseQuery = query.toLowerCase();
+    const filteredPdfs = pdfUrls.filter((pdf) => {
+      const lowercaseFilename = pdf.filename.toLowerCase();
+      return lowercaseFilename.includes(lowercaseQuery);
+    });
+    return filteredPdfs;
+  };
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+  return (
+    <div className="home-container">
+      <input
+        type="text"
+        placeholder="Search for notes..."
+        value={searchQuery}
+        onChange={handleSearchInputChange}
+      />
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          {filteredPdfUrls.map((pdf, index) => (
+            <Grid item xs={4} key={index}>
+              <a href={pdf.url} target="_blank" rel="noopener noreferrer" download={`file_${index}.pdf`} style={{ textDecoration: 'none' }}>
+                  <img
+                    src={imageUrls[index] || defaultImage}
+                    width="200px"
+                    height="300px"
+                /> 
+                {console.log(imageUrls[index], "imgggggggggggggggggg")}
+              </a>
+            </Grid>
+          ))}
+
+
+        </Grid>
+      </Box>
+    </div>
+   
+   );
+}
+
+export default Notes;
+
