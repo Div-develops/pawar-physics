@@ -1,0 +1,38 @@
+.signup {
+    height: 100vh;
+    background-color: #A9907E;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.signup-form {
+    background-color: #C8B6A6;
+    padding: 40px 15px;
+    height: fit-content;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+.sign-up-text{
+    font-family: "Poppins";
+    font-weight: 400;
+}
+.signup-container{
+    margin-top: 6%;
+    margin-inline: 10%;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .signup-container{
+        margin-top: 30%;
+        margin-inline: 5%;
+    }
+    .signup-form{
+        padding:30px 15px;
+    }
+}

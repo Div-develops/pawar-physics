@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+}
+
+.login {
+    height: 100vh;
+    background-color: #A9907E;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconlogo {
+    margin-top: 15px;
+border-radius: 50%;
+    overflow: hidden;
+    border:3px dashed #675D50;
+}
+#outlined-basic{
+    background-color: #Ffff;
+    border-radius: 10px;
+}
+.field .Mui-focused{
+    border: none!important;
+    outline: none!important;
+}
+.field .MuiOutlinedInput-notchedOutline{
+    border: none!important;
+}
+.field .MuiOutlinedInput-notchedOutline:hover{
+    border: none!important;
+}
+.field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
+border:2px solid black !important;
+}
+#outlined-basic:hover{
+    border: none;
+}
+.title-pawar-physics{
+    font-family: 'Poppins';
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.form {
+    background-color: #C8B6A6;
+    padding: 20px 25px;
+    border-radius: 24px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form fieldset {
+    border: none !important;
+}
+
+.button-container {
+    background-color: black;
+    border-style: none;
+    color: white;
+    padding: 13px 75px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.button-container:hover {
+    cursor: pointer;
+}
+
+
+
+.flex-login-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-container {
+    border-style: none;
+    outline: none;
+    border: none;
+    padding: 4px;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    height: 50px;
+    margin-top: 10px !important;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.error-text {
+    color: red;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    margin: 10px;
+    align-self: center;
+
+}
+
+.input-container::placeholder {
+    color: rgba(40, 40, 40, 0.5);
+}
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.field {
+    margin-top: 10px;
+}
+.forgot-pw-un{
+    /* align-self: flex-start; */
+    /* margin-left: 20px; */
+    margin-top: -15px;
+    font-family: 'Inter';
+    font-size: 12px;
+    color:#675D50;
+}
+
+@media only screen and (max-width: 767px) {
+.login{
+    align-items: normal;
+}
+.iconlogo{
+    margin-top: 20%;
+}
+}
