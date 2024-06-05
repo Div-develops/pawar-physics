@@ -7,15 +7,12 @@ PawarPhysics is a web application for reading physics notes on various topics of
 Students can also get classwise results of notes
 
 ## Screenshots
-
-![Screenshot 1](https://github.com/Div-develops/PawarPhysics/assets/75534560/03d07644-d7c9-4fa2-903f-e1e1a93363f1)
-![Screenshot 2](https://github.com/Div-develops/PawarPhysics/assets/75534560/f3b0b6c9-4f39-49e1-b625-5c7cd7fa63ed)
-![Screenshot 3](https://github.com/Div-develops/PawarPhysics/assets/75534560/a88f31c3-f67b-41e0-bf12-2d4d345d4941)
-![Screenshot 4](https://github.com/Div-develops/PawarPhysics/assets/75534560/b444aa3e-55c4-4156-bff5-a7156d75feef)
-![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/b4c0db35-5d37-4b5f-92b0-a77ca581d58e)
-![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/03757302-336e-49b7-9445-db401366d0f6)
-![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/8f8db2bd-f8db-4f5a-9ab2-98e3726dd95b)
-
+![Screenshot 2024-06-05 015129](https://github.com/Div-develops/PawarPhysics/assets/75534560/ad2c6e98-4d7f-4465-8bf7-20392e9bbf18)![Screenshot 2024-06-05 014427](https://github.com/Div-develops/PawarPhysics/assets/75534560/170d6b4d-db33-482f-9da4-9f03a4050219)
+![Screenshot 2024-06-05 014532](https://github.com/Div-develops/PawarPhysics/assets/75534560/dd201695-0e6d-47cc-a55e-f376f2e397e1)
+![Screenshot 2024-06-05 014611](https://github.com/Div-develops/PawarPhysics/assets/75534560/07f7e5f7-4cab-4c5b-b6c1-dc4c40357682)
+![Screenshot 2024-06-05 014643](https://github.com/Div-develops/PawarPhysics/assets/75534560/68c21618-acaf-46a8-a9c4-e09e46983430)
+![Screenshot 2024-06-05 015054](https://github.com/Div-develops/PawarPhysics/assets/75534560/0bb9f601-5610-402d-9092-7f6c37435587)
+![Screenshot 2024-06-05 015017](https://github.com/Div-develops/PawarPhysics/assets/75534560/a5690045-2138-495e-957c-2a2bb2423470)
 
 ## Features
 
