@@ -3,7 +3,7 @@
 
 # PawarPhysics
 
-PawarPhysics is a web application for reading physics notes on various topics of CBSE class IX,X,XI.It gives upload file feature to only one person,you can give multiple people access for uploading notes. Students can search the topics and get notes relted to it. Currently the notes is all scanned version. They were written by a senior physics lecturer,my father.
+PawarPhysics is a web application for reading physics notes on various topics of CBSE class IX,X,XI.It gives upload file feature to only one person,you can give multiple people access for uploading notes. Students can search the topics and get notes related to that topic. Currently the notes is all scanned version. They were written by a senior physics lecturer,my father.
 Students can also get classwise results of notes
 
 ## Screenshots
