@@ -5,8 +5,9 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { TextField } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
-function SignUpPage() {
+import loginicon from "../../assests/loginicon.jpg";
 
+function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -20,13 +21,14 @@ function SignUpPage() {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       // Success...
       console.log("User signed up:", user);
-      navigate('/home');
+      navigate("/");
       setMessage("");
     } catch (error) {
       // Error
       console.error("Sign-up error:", error);
 
-      let errorMessage = "An error occurred during sign-up. Please try again later.";
+      let errorMessage =
+        "An error occurred during sign-up. Please try again later.";
 
       if (error.code === "auth/invalid-email") {
         errorMessage = "Please enter a valid email address.";
@@ -40,10 +42,20 @@ function SignUpPage() {
       setMessage(errorMessage);
     }
   }
-  
 
   return (
     <div className="signup">
+      <img
+        src={loginicon}
+        width="120px"
+        height="120px"
+        style={{
+          borderRadius: "50%",
+          overflow: "hidden",
+          border: "3px dashed #675D50",
+        }}
+        className="signupiconlogo"
+      />
       <div className="signup-container">
         <div className="flex-login-container">
           <div className="signup-form">
@@ -88,15 +100,23 @@ function SignUpPage() {
               />
             </div>
 
-            
-
             <div className="div-center">
-              <button className="button-container" onClick={(e) => handleSignUp(e)}>
+              <button
+                className="button-container"
+                onClick={(e) => handleSignUp(e)}
+              >
                 <div className="sign-up-text">Sign Up</div>
               </button>
             </div>
 
-            <div style={{ alignSelf: "center", marginTop: "10px",fontFamily:"Poppins",fontSize:"12px" }}>
+            <div
+              style={{
+                alignSelf: "center",
+                marginTop: "10px",
+                fontFamily: "Poppins",
+                fontSize: "12px",
+              }}
+            >
               Already have an account?
               <span
                 style={{ borderBottom: "1px solid black", cursor: "pointer" }}
@@ -104,7 +124,7 @@ function SignUpPage() {
               >
                 Login here
               </span>
-              <div style={{alignContent:"center",color:"#FF0000"}}>
+              <div style={{ alignContent: "center", color: "#FF0000" }}>
                 {message}
               </div>
             </div>

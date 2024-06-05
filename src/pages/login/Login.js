@@ -19,7 +19,7 @@ function Login() {
       .then((user) => {
         // Success...
         console.log(user);
-        navigate('/home')
+        navigate('/')
         //...
       })
       .catch((error) => {

@@ -5,15 +5,18 @@
     background-size: 100%;
     background-position: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
+    
 }
 .signup-form {
     background-color: #C8B6A6;
-    padding: 40px 15px;
+    padding: 40px 51px;
     height: fit-content;
     border-radius: 24px;
-
+    
     display: flex;
     flex-direction: column;
 }
@@ -22,17 +25,24 @@
     font-weight: 400;
 }
 .signup-container{
-    margin-top: 6%;
+    margin-top: 1rem;
     margin-inline: 10%;
 }
 
 @media only screen and (max-width: 767px) {
 
+    .signup{
+        justify-content: flex-start;
+    }
+
     .signup-container{
-        margin-top: 30%;
+        margin-top: 5%;
         margin-inline: 5%;
     }
     .signup-form{
-        padding:30px 15px;
+        padding:30px 30px;
+    }
+    .signupiconlogo{
+        margin-top: 4rem;
     }
 }

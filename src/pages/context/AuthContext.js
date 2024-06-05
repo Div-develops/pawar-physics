@@ -5,26 +5,25 @@ export const Context = createContext();
 
 function AuthContext({ children }) {
     const auth = getAuth();
-    const [user, setUser] = useState(null); // Initialize user state with null
-    const [loading, setLoading] = useState(true); // Set loading to true initially
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setLoading(false);
-            setUser(currentUser); // Update user state
+            setUser(currentUser);
             if (currentUser) {
-                localStorage.setItem('user', JSON.stringify(currentUser)); // Store user in local storage
+                localStorage.setItem('user', JSON.stringify(currentUser));
             } else {
-                localStorage.removeItem('user'); // Remove user from local storage
+                localStorage.removeItem('user');
             }
         });
 
         return () => {
-            unsubscribe(); // Cleanup function
+            unsubscribe();
         };
     }, []);
 
-    // Check if user is already authenticated from local storage on initial render
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
@@ -33,9 +32,15 @@ function AuthContext({ children }) {
         }
     }, []);
 
+    // Check if the logged-in user has the specified email address
+    const isUserWithEmail = (email) => {
+        return user && user.email === email;
+    };
+
     const values = {
         user: user,
-        setUser: setUser
+        setUser: setUser,
+        isUserWithEmail: isUserWithEmail
     };
 
     return (

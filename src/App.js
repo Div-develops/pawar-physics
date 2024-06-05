@@ -27,11 +27,6 @@ function App() {
     {
       path: "/upload",
       element: <ProtectedRoute><UploadFile /></ProtectedRoute>
-    },
-    {
-      path: "/home",
-      element: <ProtectedRoute><Notes /></ProtectedRoute>
-      
     }
   ])
   return (

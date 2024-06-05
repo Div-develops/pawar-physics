@@ -1,17 +1,18 @@
 .upload-notes-main {
   min-height: 100vh;
-  background-image: url("../../assests/bg4.jpg");
+  background-color: #2B2B2B;
   background-repeat: no-repeat;
   /* Center and scale the image nicely */
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
+
   font-family: "Poppins";
-  color: #FAF1E4;
+  color: #F9E8D9;
+  padding-top: 20px;
 }
 
 .form-upload-notes {
@@ -19,8 +20,11 @@
   flex-direction: column;
   gap: 15px;
   border: 2px dashed black;
-  padding:30px 100px;
+  padding:30px 50px;
   align-self: center;
+  border:5px solid #171010;
+  border-radius: 15px;
+  background-color: #423F3E;
 }
 
 .upload-notes-title {
@@ -37,15 +41,6 @@
     gap:5px;
 }
 
-#descriptionInput{
-    height:60px;
-    width:200px;
-    padding:6px;
-}
-
-#descriptionInput:focus{
-    outline: none;
-}
 
 #nameInput:focus {
     outline: none;
@@ -66,4 +61,20 @@
 }
 .file-upload-btn:hover{
     cursor: pointer;
+}
+
+@media (max-width: 768px){
+
+    .upload-notes-main{
+        padding-top: 20px;
+    }
+    .form-upload-notes{
+
+        padding:50px 20px;
+        gap:20px
+    }
+
+    .fileip-form-upload{
+        gap:10px;
+    }
 }

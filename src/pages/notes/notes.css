@@ -1,0 +1,109 @@
+.image-notes {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  height: 300px;
+  width: 220px;
+}
+
+.notes-g-container {
+  padding-left: 50px;
+  padding-top: 20px;
+  
+}
+
+.note-item {
+  padding-bottom: 20px;
+}
+
+.notes-btn-container {
+  padding-left: 40px;
+  padding-top: 20px;
+  display: flex;
+}
+
+.notes-btn-container .MuiButton-root {
+  font-family: "Manrope", sans-serif;
+  border-radius: 25px !important;
+  margin-right: 50px;
+  /* border:2px solid ECCA9C; */
+  border: none;
+  color: #800020;
+
+  outline: 0;
+  cursor: pointer;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 6px;
+  background-color: #ffa27f;
+  border-color: #231b1b26;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+}
+
+.button-50:hover {
+  background-color: #f9b69b !important;
+}
+
+.loader-container{
+  margin-inline: 45%;
+  padding-block: 20%;
+}
+
+@media (max-width: 768px) {
+  .image-notes {
+    height: 220px;
+    width: 140px;
+  }
+
+  .note-item {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .notes-g-container {
+    padding-left: 30px;
+  }
+
+  .notes-btn-container {
+    padding-left: 40px;
+  }
+
+    .loader-container {
+      margin-inline: 44%;
+      padding-block: 70%;
+    }
+}
+
+.loader {
+  width: 70px;
+  --b: 15px;
+  /* the border thickness */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #799351;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 70deg,
+      #0000 71deg 90deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: s5 1s infinite;
+}
+
+@keyframes s5 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}

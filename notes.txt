@@ -1,0 +1,24 @@
+   <Grid container spacing={2} className="notes-g-container">
+                {filteredData
+                  .filter((file) => file.name.endsWith(".pdf"))
+                  .map((file) => (
+                    <Grid
+                      item
+                      xs={6}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      key={file.name}
+                      className="note-item"
+                    >
+                      <a href={file.url} type="application/pdf">
+                        <img
+                          src={getImageUrl(file.folder)}
+                          className="image-notes"
+                          alt={file.name}
+                        />
+                      </a>
+                    </Grid>
+                  ))}
+              </Grid>
