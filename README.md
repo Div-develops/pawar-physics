@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# PawarPhysics
 
-In the project directory, you can run:
+PawarPhysics is a web application for reading physics notes on various topics of CBSE class IX,X,XI.It gives upload file feature to only one person,you can give multiple people access for uploading notes. Students can search the topics and get notes relted to it. Currently the notes is all scanned version. They were written by a senior physics lecturer,my father.
+Students can also get classwise results of notes
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 1](https://github.com/Div-develops/PawarPhysics/assets/75534560/03d07644-d7c9-4fa2-903f-e1e1a93363f1)
+![Screenshot 2](https://github.com/Div-develops/PawarPhysics/assets/75534560/f3b0b6c9-4f39-49e1-b625-5c7cd7fa63ed)
+![Screenshot 3](https://github.com/Div-develops/PawarPhysics/assets/75534560/a88f31c3-f67b-41e0-bf12-2d4d345d4941)
+![Screenshot 4](https://github.com/Div-develops/PawarPhysics/assets/75534560/b444aa3e-55c4-4156-bff5-a7156d75feef)
+![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/b4c0db35-5d37-4b5f-92b0-a77ca581d58e)
+![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/03757302-336e-49b7-9445-db401366d0f6)
+![image](https://github.com/Div-develops/PawarPhysics/assets/75534560/8f8db2bd-f8db-4f5a-9ab2-98e3726dd95b)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Upload PDF files containing notes.
+- Organize notes by class and topic.
+- Preprocessing of titles to determine folder structure for storage.
+- Display of upload status (success or failure).
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone https://github.com/Div-develops/PawarPhysics.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+```
+cd PawarPhysics
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Set up Firebase:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   - Create a Firebase project.
+   - Set up Firebase Storage and obtain the configuration.
+   - Update the Firebase configuration in `firebase.js` and `UploadFile.js`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Run the application:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+The application will be running at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
