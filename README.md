@@ -12,12 +12,13 @@ Students can also get classwise results of notes
 
 ![Screenshot 2024-06-05 014643](https://github.com/Div-develops/PawarPhysics/assets/75534560/68c21618-acaf-46a8-a9c4-e09e46983430)
 ![Screenshot 2024-06-05 015054](https://github.com/Div-develops/PawarPhysics/assets/75534560/0bb9f601-5610-402d-9092-7f6c37435587)
-![Screenshot 2024-06-05 015017](https://github.com/Div-develops/PawarPhysics/assets/75534560/a5690045-2138-495e-957c-2a2bb2423470)
+![Screenshot 2024-06-05 141809](https://github.com/Div-develops/PawarPhysics/assets/75534560/03cd45b7-bde1-4028-8cb3-1cdcf0f03d4e)
 
 ## Features
 
 - Upload PDF files containing notes.
 - Organize notes by class and topic.
+
 - Preprocessing of titles to determine folder structure for storage.
 - Display of upload status (success or failure).
 
