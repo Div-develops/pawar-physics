@@ -20,11 +20,13 @@ function Notes() {
       const subFilePromises = subItems.items.map(async (itemRef) => {
         const url = await getDownloadURL(itemRef);
         const metadata = await getMetadata(itemRef);
-        return { url, name: metadata.name, folder: subFolderRef.name };
+        const fileExtension = metadata.name.split('.').pop().toLowerCase();
+
+        return { url, name: metadata.name, folder: subFolderRef.name, fileExtension };
       });
       return Promise.all(subFilePromises);
     });
-    return Promise.all(filePromises).then((results) => results.flat());
+    return Promise.all(filePromises).then((results) => results.flat() );
   };
 
   const fetchData = async () => {
@@ -52,16 +54,17 @@ function Notes() {
     }
   };
 
+
+  
   useEffect(() => {
     fetchData();
   }, [className]); // Update useEffect dependency to refetch on className change
 
   const getImageUrl = (folderName) => {
-    const normalizedFolderName = folderName.toLowerCase().replace(/\s+/g, "");
     const image = fileData.find(
       (file) =>
-        file.name.toLowerCase().replace(/\s+/g, "") ===
-        `${normalizedFolderName}.jpg`
+        file.folder === folderName &&
+        file.name.toLowerCase().endsWith(".jpg" || ".jpeg" || ".png")
     );
     return image ? image.url : null;
   };
@@ -168,7 +171,7 @@ function Notes() {
                           <img
                             src={getImageUrl(file.folder)}
                             className="image-notes"
-                            alt={file.name}
+                            alt={file.folder}
                           />
                         </a>
                       </Grid>
