@@ -15,7 +15,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import UploadIcon from "@mui/icons-material/UploadFileRounded";
 import { getAuth, signOut } from "firebase/auth";
-
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context as AuthContext } from "../context/AuthContext";
@@ -105,6 +104,7 @@ export default function Navbar({ onSearch }) {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
+        localStorage.removeItem("fileData");
         navigate("/login")
       })
       .catch((error) => {
