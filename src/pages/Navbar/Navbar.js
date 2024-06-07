@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
-import UploadFile from '../upload/UploadFile'
+import UploadFile from '../upload/UploadFile';
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -16,9 +16,9 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import UploadIcon from "@mui/icons-material/UploadFileRounded";
 
 import { useNavigate } from "react-router-dom";
-
 import { useContext } from "react";
 import { Context as AuthContext } from "../context/AuthContext";
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { initializeApp } from 'firebase/app';
@@ -9,11 +9,10 @@ import firebaseConfig from './fbconfig'; // Update the path to your Firebase con
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
 

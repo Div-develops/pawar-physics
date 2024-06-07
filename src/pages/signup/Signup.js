@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../login/login.css";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-import { TextField } from "@material-ui/core";
+import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
 import loginicon from "../../assests/loginicon.jpg";
+
 
 function SignUpPage() {
   const [email, setEmail] = useState("");
