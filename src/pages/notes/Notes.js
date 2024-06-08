@@ -172,6 +172,7 @@ function Notes() {
                             src={getImageUrl(file.folder)}
                             className="image-notes"
                             alt={file.folder}
+                            loading="lazy"
                           />
                         </a>
                       </Grid>
