@@ -5,11 +5,17 @@
   width: 220px;
 }
 
+.image-notes:hover{
+  scale:1.1;
+  transition: all 0.2s;
+}
+
 .notes-g-container {
   padding-left: 50px;
   padding-top: 20px;
   
 }
+
 
 .note-item {
   padding-bottom: 20px;
