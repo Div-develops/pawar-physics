@@ -153,12 +153,11 @@ export default function Navbar({ onSearch }) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-          {isLoggedInUserWithEmail && (<MenuItem>
+          {isLoggedInUserWithEmail && (<MenuItem onClick={() => navigate("/upload")}>
               <IconButton
                   size="large"
                   aria-label="show 4 new mails"
                   color="inherit"
-                  onClick={() => navigate("/upload")}
 
               >
                   <UploadIcon />
