@@ -90,4 +90,10 @@
     border-radius: 40px;
     padding: 10px 15px;
   }
+
+  .profile-username,
+.profile-email {
+  font-size: 14px;
+
+}
 }
