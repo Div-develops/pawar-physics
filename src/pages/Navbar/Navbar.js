@@ -80,6 +80,8 @@ export default function Navbar({ onSearch }) {
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+    navigate("/my-profile");
+
   };
 
   const handleProfile = () => {
