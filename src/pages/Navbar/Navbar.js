@@ -5,21 +5,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
-import UploadFile from '../upload/UploadFile';
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
 import UploadIcon from "@mui/icons-material/UploadFileRounded";
+import MoreIcon from "@mui/icons-material/MoreVert";
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { getAuth, signOut } from "firebase/auth";
-
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context as AuthContext } from "../context/AuthContext";
-
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -68,7 +64,6 @@ export default function Navbar({ onSearch }) {
   const isLoggedInUserWithEmail = isUserWithEmail(userEmail);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [searchValue, setSearchValue] = React.useState("");
-
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -80,15 +75,12 @@ export default function Navbar({ onSearch }) {
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
-    navigate("/my-profile");
-
   };
 
   const handleProfile = () => {
     setAnchorEl(null);
     navigate("/my-profile");
   };
-
 
   const handleMenuClose = () => {
     setAnchorEl(null);
@@ -108,18 +100,18 @@ export default function Navbar({ onSearch }) {
     }
   };
 
-
   const handleSignOut = () => {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
         localStorage.removeItem("fileData");
-        navigate("/login")
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Error signing out:", error);
       });
   };
+
   const menuId = "primary-search-account-menu";
   const mobileMenuId = "primary-search-account-menu-mobile";
 
@@ -140,11 +132,9 @@ export default function Navbar({ onSearch }) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleProfile}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
     </Menu>
   );
-
 
   const renderMobileMenu = (
     <Menu
@@ -162,30 +152,14 @@ export default function Navbar({ onSearch }) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {isLoggedInUserWithEmail && (<MenuItem onClick={() => navigate("/upload")}>
-              <IconButton
-                  size="large"
-                  aria-label="show 4 new mails"
-                  color="inherit"
-                  
-
-              >
-                  <UploadIcon />
-              </IconButton>
-              <p>Upload</p>
-          </MenuItem>)} 
-          <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      {isLoggedInUserWithEmail && (
+        <MenuItem onClick={() => navigate("/upload")}>
+          <IconButton size="large" aria-label="upload" color="inherit">
+            <UploadIcon />
+          </IconButton>
+          <p>Upload</p>
+        </MenuItem>
+      )}
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -197,6 +171,12 @@ export default function Navbar({ onSearch }) {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
+      </MenuItem>
+      <MenuItem onClick={handleSignOut}>
+        <IconButton size="large" aria-label="sign out" color="inherit">
+          <ExitToAppIcon />
+        </IconButton>
+        <p>Sign out</p>
       </MenuItem>
     </Menu>
   );
@@ -218,26 +198,17 @@ export default function Navbar({ onSearch }) {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
-                  <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                      {isLoggedInUserWithEmail && (<IconButton
-                          size="large"
-                          aria-label="show 4 new mails"
-                          color="inherit"
-                          onClick={() => navigate("/upload")}
-                      >
-                          <UploadIcon />
-                      </IconButton>)}
-         
-
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            {isLoggedInUserWithEmail && (
+              <IconButton
+                size="large"
+                aria-label="upload"
+                color="inherit"
+                onClick={() => navigate("/upload")}
+              >
+                <UploadIcon />
+              </IconButton>
+            )}
             <IconButton
               size="large"
               edge="end"
@@ -250,17 +221,32 @@ export default function Navbar({ onSearch }) {
               <AccountCircle />
             </IconButton>
           </Box>
-
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            {isLoggedInUserWithEmail && (
+              <IconButton
+                size="large"
+                aria-label="upload"
+                color="inherit"
+                onClick={() => navigate("/upload")}
+              >
+                <UploadIcon />
+              </IconButton>
+            )}
             <IconButton
               size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
+              aria-label="account of current user"
               color="inherit"
+              onClick={handleProfile}
             >
-              <MoreIcon />
+              <AccountCircle />
+            </IconButton>
+            <IconButton
+              size="large"
+              aria-label="sign out"
+              color="inherit"
+              onClick={handleSignOut}
+            >
+              <ExitToAppIcon />
             </IconButton>
           </Box>
         </Toolbar>
