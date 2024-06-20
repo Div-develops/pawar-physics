@@ -153,17 +153,11 @@ function Notes() {
                 </Button>
               </div>
 
-                <Grid container spacing={2} className="notes-g-container">
+             <div className="notes-g-container">
                   {filteredData
                     .filter((file) => file.name.endsWith(".pdf"))
                     .map((file) => (
-                      <Grid
-                        item
-                        xs={6}
-                        sm={4}
-                        md={4}
-                        lg={4}
-                        xl={4}
+                      <div
                         key={file.name}
                         className="note-item"
                       >
@@ -175,9 +169,9 @@ function Notes() {
                             loading="lazy"
                           />
                         </a>
-                      </Grid>
+                      </div>
                     ))}
-                </Grid>
+                </div>
             </div>
           </>
         )}
