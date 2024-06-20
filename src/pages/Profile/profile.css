@@ -66,6 +66,7 @@
    .profile-box{
     width:240px;
     padding:20px;
+    padding-block:96px;
    }
 
    .profile-container{
