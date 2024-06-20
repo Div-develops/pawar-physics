@@ -1,7 +1,25 @@
+.profile-container{
+    background-image: url('../../assests/bg.jpeg');
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    background-size: cover;
+    align-items: center;
+    gap:30px;
+}
+
+.profile-header{
+    margin-top: 80px;
+        font-size: 40px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: #fff;
+}
+
 .profile-box {
     width: 300px;
     padding: 40px;
-    background-color: white;
+    background-color: #ddd5b5;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -21,6 +39,8 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    border:1px solid #fff;
+    padding: 5px;
     object-fit: cover;
 }
 
@@ -37,11 +57,22 @@
     margin: 5px 0;
     font-size: 16px;
     color: #333;
+    background-color: #F7D14C;
+    color:#000;
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
    .profile-box{
     width:240px;
     padding:20px;
+   }
+
+   .profile-container{
+    background-image: none;
+    background-color: #F6ECC9;
+   }
+   .profile-header{
+    color:#000;
    }
 }
