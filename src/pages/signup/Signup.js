@@ -73,10 +73,12 @@ function SignUpPage() {
 
             <div className="field">
               <TextField
+                id="outlined-basic"
+                label="Enter email"
                 variant="outlined"
                 autoComplete="Off"
                 aria-autocomplete="false"
-                placeholder="Enter email"
+                placeholder=""
                 type="email"
                 name="email"
                 value={email}
@@ -87,11 +89,12 @@ function SignUpPage() {
 
             <div className="field">
               <TextField
+                id="outlined-basic"
+                label=""
                 type="password"
                 variant="outlined"
                 autoComplete="Off"
                 aria-autocomplete="false"
-                placeholder="Enter password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
