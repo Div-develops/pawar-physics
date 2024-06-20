@@ -111,7 +111,6 @@ export default function Navbar({ onSearch }) {
         console.error("Error signing out:", error);
       });
   };
-
   const menuId = "primary-search-account-menu";
   const mobileMenuId = "primary-search-account-menu-mobile";
 
