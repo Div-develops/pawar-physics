@@ -73,9 +73,13 @@ function Notes() {
   };
 
   const handleSearch = (searchValue) => {
+    console.log(fileData)
+    console.log(fileData[className])
+
     const filteredFiles = fileData[className].filter((file) =>
-      file.name.toLowerCase().includes(searchValue.toLowerCase().trim())
+      file.folder.toLowerCase().includes(searchValue.toLowerCase().trim())
     );
+    console.log(filteredFiles)
     setFilteredData(filteredFiles);
   };
 
