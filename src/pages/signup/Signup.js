@@ -95,6 +95,7 @@ function SignUpPage() {
                 placeholder="Password"
                 name="password"
                 value={password}
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-container"
               />
