@@ -15,6 +15,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import UploadIcon from "@mui/icons-material/UploadFileRounded";
 import { getAuth, signOut } from "firebase/auth";
+
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context as AuthContext } from "../context/AuthContext";
@@ -81,6 +82,12 @@ export default function Navbar({ onSearch }) {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleProfile = () => {
+    setAnchorEl(null);
+    navigate("/my-profile");
+  };
+
+
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
@@ -130,7 +137,7 @@ export default function Navbar({ onSearch }) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleProfile}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
     </Menu>
@@ -153,11 +160,12 @@ export default function Navbar({ onSearch }) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-          {isLoggedInUserWithEmail && (<MenuItem onClick={() => navigate("/upload")}>
+      {isLoggedInUserWithEmail && (<MenuItem onClick={() => navigate("/upload")}>
               <IconButton
                   size="large"
                   aria-label="show 4 new mails"
                   color="inherit"
+                  
 
               >
                   <UploadIcon />
