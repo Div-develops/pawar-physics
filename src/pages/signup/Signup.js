@@ -74,11 +74,11 @@ function SignUpPage() {
             <div className="field">
               <TextField
                 id="outlined-basic"
-                label="Enter email"
+                label=""
                 variant="outlined"
                 autoComplete="Off"
                 aria-autocomplete="false"
-                placeholder=""
+                placeholder="Enter email"
                 type="email"
                 name="email"
                 value={email}
@@ -94,6 +94,7 @@ function SignUpPage() {
                 type="password"
                 variant="outlined"
                 autoComplete="Off"
+                placeholder = "Enter password"
                 aria-autocomplete="false"
                 name="password"
                 value={password}
