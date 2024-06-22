@@ -25,7 +25,7 @@
   text-align: center;
   font-family: "Poppins";
 
-  word-wrap: break-word;
+  word-wrap:break-word;
 }
 
 .profile-image-container {
@@ -38,8 +38,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 1px solid #fff;
-  padding: 5px;
+  border: 3px solid #fff;
   object-fit: cover;
 }
 
@@ -64,7 +63,7 @@
 
 @media (max-width: 768px) {
   .profile-box {
-    width: 240px;
+    width: 255px;
     padding: 20px;
     padding-block: 96px;
     background-color: #4F6F52;
@@ -79,8 +78,7 @@
     width: 120px;
         height: 120px;
         border-radius: 50%;
-        border: 1px solid #E8DFCA;
-        padding: 5px;
+        border: 4px solid #fff;
         object-fit: cover;
   }
   .profile-header {
@@ -90,10 +88,4 @@
     border-radius: 40px;
     padding: 10px 15px;
   }
-
-  .profile-username,
-.profile-email {
-  font-size: 14px;
-
-}
 }
